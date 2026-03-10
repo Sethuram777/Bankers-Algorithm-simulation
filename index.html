@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banker's Algorithm Simulator</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Banker's Algorithm Simulator</h1>
+            <p class="subtitle">Deadlock Avoidance & Resource Allocation System</p>
+        </div>
+
+        <!-- System Configuration Section -->
+        <div class="section card">
+            <h2 class="section-title">⚙️ System Configuration</h2>
+            <div class="config-grid">
+                <div class="form-group">
+                    <label for="processes">Total Processes:</label>
+                    <input type="number" id="processes" name="processes" min="1" max="10" placeholder="e.g., 3">
+                </div>
+                <div class="form-group">
+                    <label for="resources">Total Resources:</label>
+                    <input type="number" id="resources" name="resources" min="1" max="10" placeholder="e.g., 3">
+                </div>
+            </div>
+        </div>
+
+        <!-- Available Resources Section -->
+        <div class="section card">
+            <h2 class="section-title">📦 Available Resources</h2>
+            <table id="availableResources" class="matrix"></table>
+        </div>
+
+        <!-- Allocation Matrix Section -->
+        <div class="section card">
+            <h2 class="section-title">🎯 Allocation Matrix</h2>
+            <table id="allocationMatrix" class="matrix"></table>
+        </div>
+
+        <!-- Maximum Matrix Section -->
+        <div class="section card">
+            <h2 class="section-title">📊 Maximum Requirement Matrix</h2>
+            <table id="maximumMatrix" class="matrix"></table>
+        </div>
+
+        <!-- Run Algorithm Button -->
+        <div class="section card button-center">
+            <button type="button" class="btn btn-primary" onclick="runBankersAlgorithm()">▶️ Run Banker's Algorithm</button>
+        </div>
+
+        <!-- Need Matrix Section -->
+        <div class="section card">
+            <div id="needMatrixDiv">
+                <!-- Display the Need Matrix here -->
+            </div>
+        </div>
+
+        <!-- Algorithm Results Section -->
+        <div class="section card">
+            <div id="result">
+                <!-- Display the result of the Banker's Algorithm here -->
+            </div>
+        </div>
+
+        <!-- Resource Request Simulation Section -->
+        <div class="section card">
+            <h2 class="section-title">🔄 Resource Request Simulation</h2>
+            <div class="request-container">
+                <div class="request-form">
+                    <div class="form-group">
+                        <label for="requestProcess">Select Process:</label>
+                        <select id="requestProcess" name="requestProcess"></select>
+                    </div>
+                    <div id="requestResourcesInputs" class="resources-grid">
+                        <!-- Dynamic resource input fields will be added here -->
+                    </div>
+                    <button type="button" class="btn btn-success" onclick="submitResourceRequest()">💾 Request Resources</button>
+                </div>
+                <div id="requestResultDiv" class="request-result">
+                    <!-- Request result will be displayed here -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
